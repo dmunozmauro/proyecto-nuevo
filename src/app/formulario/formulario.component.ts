@@ -17,7 +17,7 @@ export class FormularioComponent implements OnInit {
   ngOnInit() {
     this.formulario = new FormGroup({
       nombrePersona: new FormControl(this.nombre, [Validators.required, Validators.pattern('[a-zA-Zñ ]*')]),
-      apellidoPersona: new FormControl(this.apellido, Validators.required)
+      apellidoPersona: new FormControl(this.apellido, [Validators.required, Validators.pattern('[a-zA-Zñ ]*')])
     });
   }
 
