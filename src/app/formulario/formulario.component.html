@@ -1,39 +1,33 @@
 <div class="container-fluid">
   <form [formGroup]="formulario">
+    <H1>FORMULARIO CON API REST</H1>
     <div class="form-group">
-      <label>Nombre: </label>
+      <label>ID O USUARIO: </label>
       <input type="text" formControlName="nombrePersona" class="form-control" [(ngModel)]="nombreIngresado" placeholder="Ingresa tu nombre"
         [ngClass]="{'is-invalid': formulario.controls['nombrePersona'].errors && !formulario.controls['nombrePersona'].pristine}">
     </div>
+
+    <!-- VALIDAR DATOS PARA NOMBRE -->
     <div *ngIf="formulario.controls['nombrePersona'].errors && !formulario.controls['nombrePersona'].pristine">
-      <small class="text-danger" [hidden]="!formulario.controls['nombrePersona'].errors">Favor ingrese caracteres válidos.</small>
+      <small class="text-danger" [hidden]="!formulario.controls['nombrePersona'].errors">Favor ingrese caracteres
+        válidos.</small>
     </div>
 
-    <!-- <div class="form-group">
-      <label>Apellido: </label>
-      <input type="text" formControlName="apellidoPersona" class="form-control" [(ngModel)]="apellidoIngresado" placeholder="Ingresa tu apellido"
-        [ngClass]="{'is-invalid': formulario.controls['apellidoPersona'].errors && !formulario.controls['apellidoPersona'].pristine}">
+     <div class="form-group">
+      <label>CONDICION DE MUESTRA: </label>
+      <input type="text" formControlName="apellidoPersona" class="form-control" [(ngModel)]="apellidoIngresado"
+        placeholder="variable.name" [ngClass]="{'is-invalid': formulario.controls['apellidoPersona'].errors && !formulario.controls['apellidoPersona'].pristine}">
     </div>
-    <div *ngIf="formulario.controls['apellidoPersona'].errors && !formulario.controls['apellidoPersona'].pristine">
-      <small class="text-danger" [hidden]="!formulario.controls['apellidoPersona'].errors">Favor ingrese caracteres válidos.</small>
-    </div> -->
-    <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Enviar</button>
+
+     <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Enviar</button>
   </form>
-  <br>
-  <h3>El QR: </h3>
-  <div>
 
-    <table>
-      <tbody>
-        <tr>
-          <!-- <th>Nombre: </th> -->
-          <td>{{nombreIngresado}}</td>
-        </tr>
-        <!-- <tr>
-          <th>Apellido: </th>
-          <td>{{apellidoIngresado}}</td>
-        </tr> -->
-      </tbody>
-    </table>
+  <div *ngFor="let vari of variable">
+    <div *ngIf="vari.id == nombreIngresado">
+        <li>{{vari.id}}</li>
+        <li>{{vari.name}}</li>
+        <li>{{vari.username}}</li> 
+    </div>
+    
   </div>
 </div>

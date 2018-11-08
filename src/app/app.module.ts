@@ -4,15 +4,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FormularioComponent } from './formulario/formulario.component';
-import { Formulario2Component } from './formulario2/formulario2.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormularioComponent,
-    Formulario2Component
   ],
   imports: [
     BrowserModule,
@@ -20,7 +20,9 @@ import { BsDropdownModule } from 'ngx-bootstrap';
     BsDropdownModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxQRCodeModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
