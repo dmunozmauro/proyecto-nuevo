@@ -13,21 +13,33 @@
         válidos.</small>
     </div>
 
-     <div class="form-group">
+    <div class="form-group">
       <label>CONDICION DE MUESTRA: </label>
       <input type="text" formControlName="apellidoPersona" class="form-control" [(ngModel)]="apellidoIngresado"
-        placeholder="variable.name" [ngClass]="{'is-invalid': formulario.controls['apellidoPersona'].errors && !formulario.controls['apellidoPersona'].pristine}">
+         [ngClass]="{'is-invalid': formulario.controls['apellidoPersona'].errors && !formulario.controls['apellidoPersona'].pristine}">
     </div>
 
-     <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Enviar</button>
+    <!-- <div class="form-group">
+      <label>DIRECCION: </label>
+      <input type="text" formControlName="direccionPersona" class="form-control" [(ngModel)]="direccionIngresada">
+      <br>
+      <label>TELEFONO: </label>
+      <input type="text" formControlName="telefonoPersona" class="form-control" [(ngModel)]="telefonoIngresado">
+    </div>
+    <div ngIf*="formulario.controls['telefonoPersona'].errors && !formulario.controls['telefonoPersona'].pristine">
+      <small class="text-danger" [hidden]="!formulario.controls['telefonoPersona'].errors"> Favor ingrese solo
+        numeros</small>
+    </div> -->
+
+    <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Enviar</button>
   </form>
 
   <div *ngFor="let vari of variable">
     <div *ngIf="vari.id == nombreIngresado">
-        <li>{{vari.id}}</li>
-        <li>{{vari.name}}</li>
-        <li>{{vari.username}}</li> 
+      <li>{{vari.id}}</li>
+      <li>{{vari.name}}</li>
+      <li>{{vari.username}}</li>
     </div>
-    
+
   </div>
 </div>

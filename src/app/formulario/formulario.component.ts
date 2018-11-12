@@ -14,6 +14,8 @@ export class FormularioComponent implements OnInit {
 
   public nombre: string;
   public apellido: string;
+  public direccion: string;
+  public telefono: number;
   public formulario: FormGroup;
   public variable: string;
   constructor(
@@ -23,12 +25,15 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit() {
     this.formulario = new FormGroup({
-      nombrePersona: new FormControl(this.nombre, [Validators.required, Validators.pattern('[a-zA-Zñ ]*')]),
-      apellidoPersona: new FormControl(this.apellido, [Validators.required, Validators.pattern('[a-zA-Zñ ]*')])
+      nombrePersona: new FormControl(this.nombre, [Validators.required/* , Validators.pattern('[a-zA-Zñ ]*') */]),
+      apellidoPersona: new FormControl(this.apellido, [Validators.required/* , Validators.pattern('[a-zA-Zñ ]*') */]),
+      /* direccionPersona: new FormControl(this.direccion, [Validators.required]),
+      telefonoPersona: new FormControl(this.telefono, [Validators.required, Validators.pattern('[1-0]')]) */
     });
 
     this._servicio.getUsuario().subscribe(result => {
       this.variable = result;
+      console.log(this.variable);
     });
   }
 }
