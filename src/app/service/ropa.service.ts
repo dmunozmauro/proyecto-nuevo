@@ -12,7 +12,7 @@ export class RopaService {
     constructor (
         private _peticion: Http
     ) {
-        this.url = 'https://jsonplaceholder.typicode.com/users';
+        this.url = 'http://localhost:3000/familia';
     }
 
     getUsuario() {

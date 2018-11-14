@@ -33,7 +33,7 @@
 
     <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Enviar</button>
   </form>
-
+  <br>
   <div *ngFor="let vari of variable">
     <div *ngIf="vari.id == nombreIngresado">
       <li>{{vari.id}}</li>
