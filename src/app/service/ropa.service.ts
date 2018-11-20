@@ -19,4 +19,9 @@ export class RopaService {
         return this._peticion.get(this.url)
         .pipe(map(res => res.json()));
     }
+
+    postInser() {
+        return this._peticion.post(this.url)
+        .pipe(map(res => res.json()));
+    }
 }
